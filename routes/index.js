@@ -5,5 +5,3 @@ router.get("/", (req, res) => {
 })
 
 module.exports = router;
-
-// 3Sz82je6PuP0ERwG
