@@ -4,6 +4,44 @@
     box-sizing: border-box;
 }
 
+a, li {
+    text-decoration: none;
+    color: inherit;
+}
+
 :root {
-    --color-primary: #1A8CD8;
+    --main-color: #1A8CD8;
+    --secondary-color: aliceblue;
+    --link-color: #F7F9F9;
+    --main-bg: #15202B;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--main-bg);
+}
+
+.px-5 {
+    padding: 0 0.8rem;
+}
+
+/* --------------- Menu --------------- */
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 1rem;
+    color: var(--link-color);
+    font-weight: 600;
+    font-size: 1.8rem;
 }
