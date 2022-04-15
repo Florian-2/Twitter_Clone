@@ -1,5 +1,20 @@
 extends ../layout.pug
 
 block content 
-    h1 tweet-form 
-    form(action="") 
+    h1 tweet-form
+
+    section  
+        p Profile 
+        include ../includes/profile.pug
+
+    section 
+        form(action="/api/tweets" method="POST")
+            div(class="form-group")
+                label(for="")
+                textarea(name="content", cols="60", rows="10" placeholder="Quoi de neuf ?")
+                
+                if errContent 
+                    p #{ errContent }
+
+            div(class="form-group")
+                button(type="submit") Tweeter

@@ -27,21 +27,39 @@ body {
     background-color: var(--main-bg);
 }
 
-.px-5 {
+.px-8 {
     padding: 0 0.8rem;
 }
 
 /* --------------- Menu --------------- */
 header {
+    border: 2px solid white;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+header nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
 header nav a {
-    margin: 0 1rem;
     color: var(--link-color);
     font-weight: 600;
     font-size: 1.8rem;
+}
+
+/* --------------- Main --------------- */
+main
+{
+    margin: 2rem 0;
+    color: white;
+}
+
+.tweet {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid red;
 }
