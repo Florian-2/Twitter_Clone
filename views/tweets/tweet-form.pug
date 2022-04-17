@@ -8,13 +8,14 @@ block content
         include ../includes/profile.pug
 
     section 
-        form(action="/api/tweets" method="POST")
+        form(action="/tweets/create" method="POST")
             div(class="form-group")
                 label(for="")
                 textarea(name="content", cols="60", rows="10" placeholder="Quoi de neuf ?")
                 
-                if errContent 
-                    p #{ errContent }
+                if errors
+                    each error in errors
+                        p #{ error }
 
             div(class="form-group")
                 button(type="submit") Tweeter
