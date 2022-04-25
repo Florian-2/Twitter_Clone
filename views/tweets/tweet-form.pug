@@ -7,12 +7,14 @@ block content
         p Profile 
         include ../includes/profile.pug
 
-    section 
-        form(action="/tweets/create" method="POST")
+    section
+        - const url = tweet._id ? `/tweets/update/${tweet._id}` : "/tweets/create/";
+
+        form(action=url method="POST")
             div(class="form-group")
                 label(for="")
-                textarea(name="content", cols="60", rows="10" placeholder="Quoi de neuf ?")
-                
+                textarea(name="content", cols="60", rows="10" placeholder="Quoi de neuf ?") #{ tweet.content }
+
                 if errors
                     each error in errors
                         p #{ error }

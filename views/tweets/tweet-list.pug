@@ -1,13 +1,5 @@
-extends ../layout.pug
-
-block content 
-    section  
-        p Profile 
-        include ../includes/profile.pug
-    
-    section 
-        h1 tweet-list
-        if tweets
-            each tweet in tweets
-                div(class="tweet")
-                    p #{ tweet.content }
+if tweets
+    each tweet in tweets
+        div(class="tweet")
+            a(href="/tweets/update-form/" + tweet._id) #{ tweet.content }
+            button(data-tweet-id=tweet._id) Supprimer

@@ -23,11 +23,8 @@ app.use(index);
 
 if (ENV === "development") {
     app.use(errorHandler());
-    console.log("dev");
 }
 else {
-    console.log("prod");
-
     app.use((err, req, res, next) => {
         const code = err.code || 500;
 

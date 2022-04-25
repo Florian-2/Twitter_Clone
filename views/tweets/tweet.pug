@@ -1,0 +1,11 @@
+extends ../layout.pug
+
+block content 
+    script(src="/javascripts/tweets/tweet.js" defer) 
+    section  
+        p Profile 
+        include ../includes/profile.pug
+    
+    section(class="section-tweets")
+        h1 tweet-list
+        include tweet-list.pug
