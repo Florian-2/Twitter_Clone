@@ -8,6 +8,10 @@ const errorHandler = require("errorhandler");
 require("./database/index");
 
 const app = express();
+exports.app = app;
+
+require("./config/session.config");
+
 const PORT = process.env.PORT;
 const ENV = process.env.NODE_ENV;
 
