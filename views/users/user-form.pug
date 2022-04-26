@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block content 
+    h1 user-form
+
+    section
+        form(action="/users/signup" method="POST")
+            div(class="form-group")
+                label(for="username") Pseudo
+                input(type="text" name="username" id="username" value="user1")
+            
+            div(class="form-group")
+                label(for="email") Email
+                input(type="email" name="email" id="email" value="user1@mail.com")
+
+            div(class="form-group")
+                label(for="password") Mot de passe
+                input(type="password" name="password" id="password" value="User1a")
+
+            if errors
+                ul 
+                    each error in errors
+                        li #{ error }
+
+            div(class="form-group")
+                button(type="submit") S'inscrire
