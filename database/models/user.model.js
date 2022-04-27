@@ -37,6 +37,7 @@ userSchema.statics.hashPassword = (password) => {
 }
 
 userSchema.pre('save', async function (next) {
+    // this = document mongoose
     const user = this;
 
     try {       

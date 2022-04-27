@@ -8,12 +8,12 @@ const errorHandler = require("errorhandler");
 require("./database/index");
 
 const app = express();
+const PORT = process.env.PORT;
+const ENV = process.env.NODE_ENV;
 exports.app = app;
 
 require("./config/session.config");
-
-const PORT = process.env.PORT;
-const ENV = process.env.NODE_ENV;
+require("./config/passport.config");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

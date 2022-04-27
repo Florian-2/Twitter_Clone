@@ -1,14 +1,10 @@
 extends ../layout.pug
 
 block content 
-    h1 user-form
+    h1 Connexion
 
     section
-        form(action="/users/signup" method="POST")
-            div(class="form-group")
-                label(for="username") Pseudo
-                input(type="text" name="username" id="username" value="user1")
-            
+        form(action="/auth/signin" method="POST")           
             div(class="form-group")
                 label(for="email") Email
                 input(type="email" name="email" id="email" value="user1@mail.com")
@@ -23,4 +19,4 @@ block content
                         li #{ error }
 
             div(class="form-group")
-                button(type="submit") S'inscrire
+                button(type="submit") Connexion
