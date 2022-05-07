@@ -8,8 +8,10 @@ const userSchema = mongoose.Schema({
     username: { 
         type: String, 
         required: [true, "Pseudo requis"],
-        trim: true
+        trim: true,
+        unique: true
     },
+    avatar: { type: String, default: "/images/avatars/default_picture_profile.png" },
     local: {
         email: { 
             type: String,
@@ -32,7 +34,7 @@ userSchema.statics.hashPassword = (password) => {
         return bcrypt.hash(password, 10);
     } 
     catch(e) {
-        throw e
+        throw e;
     }
 }
 
@@ -41,6 +43,9 @@ userSchema.pre('save', async function (next) {
     const user = this;
 
     try {       
+        if (!user.isModified('password')) 
+            return next();
+
         const hashPassword = await bcrypt.hash(user.local.password, 10);
         user.local.password = hashPassword;
         next();

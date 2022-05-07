@@ -63,3 +63,15 @@ main
     margin-top: 2rem;
     border: 1px solid red;
 }
+
+/* --------------- Profil --------------- */
+.profil {
+    border: 2px solid white;
+    margin: 10px 0 10px 0;
+}
+
+.profil img {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+}

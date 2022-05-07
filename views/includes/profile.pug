@@ -1,2 +1,14 @@
-block content 
-    h1 Profile
+block content
+    script(src="/javascripts/profile.js" defer) 
+
+    div(class="profil")
+        h1 Profile
+        form(action="/users/update/image" method="post" enctype="multipart/form-data") 
+            input(type="file" name="avatar" hidden)
+            img(src=currentUser.avatar, alt="alt" id="profile-picture")
+        h2 #{ currentUser.username } - #{ currentUser.local.email }
+
+        br
+
+        p Nombre de tweet...
+        p Nombre de personne suivi
