@@ -8,9 +8,9 @@ const errorHandler = require("errorhandler");
 require("./database/index");
 
 const app = express();
-const PORT = process.env.PORT;
+module.exports = app;
+
 const ENV = process.env.NODE_ENV;
-exports.app = app;
 
 require("./config/session.config");
 require("./config/passport.config");
@@ -38,5 +38,3 @@ else {
         })
     })
 }
-
-app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));

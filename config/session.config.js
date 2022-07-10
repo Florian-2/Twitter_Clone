@@ -1,4 +1,4 @@
-const { app } = require("../app");
+const app = require("../app");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const { clientPromise } = require('../database/index');
@@ -13,6 +13,6 @@ app.use(session({
     },
     store: MongoStore.create({
         clientPromise: clientPromise.then((mongoose) => mongoose.connection.getClient()),
-        ttl: 60 * 60 * 24 * 15 // 15 jours en secondes
+        ttl: 60 * 60 * 24 * 15 // 15 jours en secondes 
     })
 }));

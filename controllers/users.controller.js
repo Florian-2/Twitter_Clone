@@ -13,8 +13,6 @@ const upload = multer({
     }),
 })
 
-// C:\Users\Florian\Documents\Projet_Dev\Twitter\controllers\public\images\avatars\1651934254888-pexels-jermaine.jpg
-
 exports.signupForm = (req, res, next) => {
     res.render("users/user-form", { errors: null, isAuthenticated: req.isAuthenticated(), currentUser: req.user });
 }
